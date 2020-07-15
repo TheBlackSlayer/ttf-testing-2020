@@ -16,12 +16,9 @@ namespace LeapYear
                 return false;
             }
 
-            if (anno < 1581)
+            if (anno < 1581 && anno % 100 == 0)
             {
-                if (anno % 100 == 0)
-                {
-                    return true;
-                }
+                return true;
             }
 
             if (anno % 400 == 0)
