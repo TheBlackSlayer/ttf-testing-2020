@@ -14,7 +14,7 @@ namespace TestProject
         [TestCase(2012, true)]
         [TestCase(2032, true)]
         [TestCase(1783, false)]
-        public void Test1(int anno, bool bisestile)
+        public void TestAnniBaseSenzaEccezioni(int anno, bool bisestile)
         {
             Assert.That(Year.Calculate(anno), Is.EqualTo(bisestile));
         }
@@ -26,7 +26,9 @@ namespace TestProject
         [TestCase(1100, true)]
         [TestCase(800, true)]
         [TestCase(300, true)]
-        public void Test2(int anno, bool bisestile)
+        [TestCase(1900, false)]
+        [TestCase(1700, false)]
+        public void TestAnniCentenari(int anno, bool bisestile)
         {
             Assert.That(Year.Calculate(anno), Is.EqualTo(bisestile));
         }
@@ -34,7 +36,7 @@ namespace TestProject
         [TestCase(-20, false)]
         [TestCase(-3, false)]
         [TestCase(-1865, false)]
-        public void Test3(int anno, bool bisestile)
+        public void TestAnniNegativi(int anno, bool bisestile)
         {
             Assert.That(Year.Calculate(anno), Is.EqualTo(bisestile));
         }
