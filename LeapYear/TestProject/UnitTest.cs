@@ -13,8 +13,8 @@ namespace TestProject
         [TestCase(2012, true)]
         [TestCase(2032, true)]
         [TestCase(1783, false)]
-        [TestCase()]
-        [TestCase()]
+        [TestCase(1400, false)]
+        [TestCase(500, false)]
         [TestCase()]
         public void Test(int anno, bool bisestile)
         {
