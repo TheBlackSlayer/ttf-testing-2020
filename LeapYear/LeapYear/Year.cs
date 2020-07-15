@@ -6,7 +6,11 @@ namespace LeapYear
     {
         public static bool Calculate(int anno)
         {
-            return true;
+            if (anno % 4 == 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
