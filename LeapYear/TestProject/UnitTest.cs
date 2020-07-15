@@ -20,6 +20,9 @@ namespace TestProject
         [TestCase(1100, true)]
         [TestCase(800, true)]
         [TestCase(300, true)]
+        [TestCase(-20, false)]
+        [TestCase(-3, false)]
+        [TestCase(-1865, false)]
         public void Test(int anno, bool bisestile)
         {
             Assert.That(Year.Calculate(anno), Is.EqualTo(bisestile));
