@@ -42,5 +42,13 @@ namespace UnitTest
         {
             Assert.That(Calculator.Add(str), Is.EqualTo(num));
         }
+
+        [TestCase("8,2,10", 20)]
+        [TestCase("74,3,3", 80)]
+        [TestCase("3,3,3,3,3,3", 18)]
+        public void TestStringheConSommaDiPiuNumeri(string str, int num)
+        {
+            Assert.That(Calculator.Add(str), Is.EqualTo(num));
+        }
     }
 }
