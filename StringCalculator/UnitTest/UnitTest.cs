@@ -36,7 +36,7 @@ namespace UnitTest
         }
 
         [TestCase("18,2", 20)]
-        [TestCase("74,3,", 77)]
+        [TestCase("74,3", 77)]
         [TestCase("7,74", 81)]
         public void TestStringheConSomma(string str, int num)
         {

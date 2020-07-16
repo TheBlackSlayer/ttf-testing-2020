@@ -13,7 +13,12 @@ namespace StringCalculator
             if (str.Contains(","))
             {
                 string[] numbers = str.Split(",");
-                return Convert.ToInt32(numbers[0]) + Convert.ToInt32(numbers[1]);
+                int sum = 0;
+                foreach (string number in numbers)
+                {
+                    sum += Convert.ToInt32(number);
+                }
+                return sum;
             }
             return Convert.ToInt32(str);
         }
