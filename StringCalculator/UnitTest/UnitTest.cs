@@ -11,20 +11,20 @@ namespace UnitTest
         {
         }
 
-        [TestCase("gdsg")]
-        [TestCase("4wf4")]
-        [TestCase("18")]
-        public void TestStringheACaso(string str)
-        {
-            Calculator.Calculate(str);
+        //[TestCase("gdsg")]
+        //[TestCase("4wf4")]
+        //[TestCase("18")]
+        //public void TestStringheACaso(string str)
+        //{
+        //    Calculator.Add(str);
 
-            Assert.Pass();
-        }
+        //    Assert.Pass();
+        //}
 
         [TestCase("")]
         public void TestStringaVuota(string str)
         {
-            Assert.That(Calculator.Calculate(str), Is.EqualTo(0));
+            Assert.That(Calculator.Add(str), Is.EqualTo(0));
         }
 
         [TestCase("18", 18)]
@@ -32,7 +32,15 @@ namespace UnitTest
         [TestCase("789", 789)]
         public void TestStringheNumeriche(string str, int num)
         {
-            Assert.That(Calculator.Calculate(str), Is.EqualTo(num));
+            Assert.That(Calculator.Add(str), Is.EqualTo(num));
+        }
+
+        [TestCase("18,2", 20)]
+        [TestCase("74,3,", 77)]
+        [TestCase("7,74", 81)]
+        public void TestStringheConSomma(string str, int num)
+        {
+            Assert.That(Calculator.Add(str), Is.EqualTo(num));
         }
     }
 }

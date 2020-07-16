@@ -4,7 +4,7 @@ namespace StringCalculator
 {
     public class Calculator
     {
-        public static int Calculate(string str)
+        public static int Add(string str)
         {
             if (str is null)
             {
