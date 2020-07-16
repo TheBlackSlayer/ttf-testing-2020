@@ -6,7 +6,7 @@ namespace StringCalculator
     {
         public static int Calculate(string str)
         {
-            return 7;
+            return 0;
         }
     }
 }
