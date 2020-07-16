@@ -20,5 +20,11 @@ namespace UnitTest
 
             Assert.Pass();
         }
+
+        [TestCase("")]
+        public void TestStringaVuota(string str)
+        {
+            Assert.That(Calculator.Calculate(str), Is.EqualTo(0));
+        }
     }
 }
