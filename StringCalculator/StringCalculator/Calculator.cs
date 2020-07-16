@@ -6,18 +6,16 @@ namespace StringCalculator
     {
         public static int Add(string str)
         {
-            if (str is null)
+            if (str == "")
             {
                 return 0;
             }
-            try
+            if (str.Contains(","))
             {
-                return Convert.ToInt32(str);
+                string[] numbers = str.Split(",");
+                return Convert.ToInt32(numbers[0]) + Convert.ToInt32(numbers[1]);
             }
-            catch (Exception)
-            {
-                return 0;
-            }
+            return Convert.ToInt32(str);
         }
     }
 }
