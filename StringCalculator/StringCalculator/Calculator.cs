@@ -6,7 +6,18 @@ namespace StringCalculator
     {
         public static int Calculate(string str)
         {
-            return 0;
+            if (str is null)
+            {
+                return 0;
+            }
+            try
+            {
+                return Convert.ToInt32(str);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
     }
 }
