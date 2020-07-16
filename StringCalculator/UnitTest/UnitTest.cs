@@ -51,10 +51,17 @@ namespace UnitTest
             Assert.That(Calculator.Add(str), Is.EqualTo(num));
         }
 
-        [TestCase("8\n2,10", 20)]
+        [TestCase("8\n2\n10", 20)]
         [TestCase("74\n3\n3", 80)]
         [TestCase("3,3\n3,3,3\n3", 18)]
         public void TestStringheConSommaDiPiuNumeriEBackslashn(string str, int num)
+        {
+            Assert.That(Calculator.Add(str), Is.EqualTo(num));
+        }
+        [TestCase("//;\n8;2;10", 20)]
+        [TestCase("//;\n74;3;3", 80)]
+        [TestCase("//;\n3;3;3;3;3;3", 18)]
+        public void TestStringheConSommaDiPiuNumeriConDelimitatoreCustom(string str, int num)
         {
             Assert.That(Calculator.Add(str), Is.EqualTo(num));
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StringCalculator
 {
@@ -11,36 +12,20 @@ namespace StringCalculator
             {
                 return 0;
             }
-            if (str.Contains(",") || str.Contains("\n"))
+
+            List<int> numbers = new List<int>();
+
+            if (str.Contains("//"))
             {
-                List<string> numbers = new List<string>();
-                string[] subStrings = str.Split(",");
-
-                foreach (string subString in subStrings)
-                {
-                    if (subString.Contains("\n"))
-                    {
-                        string[] bnSubStrings = subString.Split("\n");
-
-                        foreach (string bnSubString in bnSubStrings)
-                        {
-                            numbers.Add(bnSubString);
-                        }
-                    }
-                    else
-                    {
-                        numbers.Add(subString);
-                    }
-                }
-
-                int sum = 0;
-                foreach (string number in numbers)
-                {
-                    sum += Convert.ToInt32(number);
-                }
-                return sum;
+                string[] separatoreENumeri = str.Substring(2).Split("\n");
+                separatoreENumeri[1].Split(separatoreENumeri[0]).ToList().ForEach(x => numbers.Add(Convert.ToInt32(x)));
             }
-            return Convert.ToInt32(str);
+            else
+            {
+                str.Split(new string[] { ",", "\n" }, StringSplitOptions.None).ToList().ForEach(x => numbers.Add(Convert.ToInt32(x)));
+            }
+
+            return numbers.Sum();
         }
     }
 }
